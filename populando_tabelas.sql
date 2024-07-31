@@ -1,3 +1,4 @@
+-- populando tabelas com valores falsos
 INSERT INTO cliente VALUES (1, 'Mario');  
 INSERT INTO cliente VALUES (2, 'Ana');  
 INSERT INTO cliente VALUES (3, 'Jonas');  
@@ -23,13 +24,15 @@ INSERT INTO corrida VALUES(2, 'USA-183', '2017-05-02');
 INSERT INTO corrida VALUES(3, 'CAN-672', '2018-02-06');
 INSERT INTO corrida VALUES(4, 'USA-171', '2012-08-12');
 
-UPDATE cliente SET nome = 'José' WHERE id = 1;
-
-UPDATE corrida SET placa = 'ITA-456' WHERE cliid = 1;
-
-UPDATE taxi SET placa = 'ITA-456' WHERE MODEL;
+-- atualizando colunas de algumas tabelas
 UPDATE taxi SET marca = 'Honda' WHERE placa = 'ITA-123';
+UPDATE taxi SET modelo = 'modeloD' WHERE placa = 'CAN-672';
+UPDATE cliente SET nome = 'Jose' WHERE id = 1;
 
+-- deletando de corrida a pessoa com id = 3
+DELETE FROM corrida WHERE cliid = 3; 
+
+-- consultando todas as tabelas
 SELECT * FROM corrida;
 SELECT * FROM cliente;
 SELECT * FROM cliente_empresa;
